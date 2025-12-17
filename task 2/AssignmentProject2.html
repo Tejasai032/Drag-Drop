@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="Project2.css" />
+</head>
+<body>
+    <h1>CRICKET TEAM PLAYERS</h1>
+    <div id="ground">
+        <div class="card" id="players">
+            <h3>Players</h3>
+            <ol>
+                <li draggable="true">Kohili</li>
+                <li draggable="true">Dhoni</li>
+                <li draggable="true">Rajath Pathidar</li>
+                <li draggable="true">Sanju Samson</li>
+                <li draggable="true">Hardik Pandiya</li>
+                <li draggable="true">Krunal Pandiya</li>
+                <li draggable="true">Surya Kumar Yadav</li>
+                <li draggable="true">Abhishek Sharma</li>
+                <li draggable="true">Camaroon Green</li>
+                <li draggable="true">Gayle</li>
+                <li draggable="true">Jithesh Sharma</li>
+                <li draggable="true">Hazlewood</li>
+                <li draggable="true">Tim David</li>
+                <li draggable="true">Buvneshwar Kumar</li>
+                <li draggable="true">Sam Curran</li>
+            </ol>
+        </div>
+        <div class="Teams" id="teams">
+            <div class="card"  id="csk">
+                <h3>CSK</h3>
+            </div>
+            <div class="card" id="rcb">
+                <h3>RCB</h3>
+            </div>
+        </div>
+    </div>
+    <script>
+        let DraggedItems = null;
+
+        let members = document.querySelectorAll("li");
+        for (let tm of members) {
+            tm.addEventListener("dragstart", DragStart);
+        }
+
+        function DragStart(player) {
+            DraggedItems = player.target;
+        }
+
+        let team = document.querySelectorAll(".card");
+
+        for (let tp of team) {
+            tp.addEventListener("dragover", Drop);
+            tp.addEventListener("drop", addplayers);
+        }
+
+
+        function Drop(player) {
+            player.preventDefault();
+        }
+
+        function addplayers(player) {
+
+            let card = player.target.closest(".card");
+
+            if (DraggedItems && card) {
+                card.appendChild(DraggedItems);
+                DraggedItems = null;
+            }
+        }
+
+    </script>
+</body>
+</html>

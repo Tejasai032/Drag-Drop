@@ -1,0 +1,70 @@
+﻿
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background-image:url("Ground.jpg");
+    background-size:cover;
+}
+
+h1{
+    text-align:center;
+    color:white; 
+}
+
+h3{
+    border-bottom:2px solid black;
+}
+
+#csk{
+    background-color:yellow;
+}
+
+#rcb{
+    background-color:rgb(243, 18, 18)
+}
+
+.card {
+    width: 200px;
+    height: 250px;
+    margin: 10px;
+    text-align: center;
+    overflow: auto;
+    scrollbar-width:none;
+    border-radius: 8px;
+    background-color: rgb(221, 214, 214)
+}
+
+#ground{
+    display:flex;
+    flex-direction:column;
+    margin-top:10px;
+    padding-top:5px;
+}
+
+#teams {
+    display:flex;
+    justify-content:space-around;
+}
+
+#players {
+     margin:auto;
+}
+
+li{
+    border:1px solid green;
+    width:150px;
+    margin:auto;
+    padding:5px;
+    margin-top:5px;
+    background-color: cadetblue;
+    cursor:grabbing;
+    border-radius:8px;
+}
+
+ol{
+    list-style-type:none;
+}
